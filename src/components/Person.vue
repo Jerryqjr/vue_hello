@@ -17,21 +17,21 @@ export default {
 
 <!-- 下面的写法是setup语法糖 -->
 <script lang="ts" setup name="Person">
-console.log(this) //undefined
+import { ref } from "vue"
 
-// 数据（注意：此时的name、age、tel都不是响应式数据）
-let name = "Jerry"
-let age = 18
+// 数据
+let name = ref("Jerry")
+let age = ref(18)
 let tel = "13888888888"
 let address = "西湖区留下街道"
 
 // 方法
 function changName() {
-  name = "Tom" //注意：此时这么修改name页面是不变化的
+  name.value = "Tom"
 }
 function changAge() {
   console.log(age)
-  age += 1 //注意：此时这么修改age页面是不变化的
+  age.value += 1
 }
 function showTel() {
   alert(tel)
