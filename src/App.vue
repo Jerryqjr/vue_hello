@@ -1,8 +1,5 @@
 <template>
-  <div class="app">
-    <h1>你好</h1>
-    <Person />
-  </div>
+  <Person />
 </template>
 
 <script lang="ts">
@@ -12,16 +9,3 @@ export default {
   components: { Person }, //注册组件
 }
 </script>
-
-<style>
-.app {
-  background-color: #ddd;
-  box-shadow: 0 0 10px;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-button {
-  margin: 0 10px;
-}
-</style>

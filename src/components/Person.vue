@@ -11,23 +11,27 @@
 <script lang="ts">
 export default {
   name: "Person",
-  data() {
-    return {
-      name: "张三",
-      age: 18,
-      tel: "13888888888",
+  setup(props, ctx) {
+    //console.log("@@", this) //setup函数中的this是undefined,vue3中已经弱化this了
+    //数据,原来是写在data()中的,此时的name,age,tel不是响应式的数据
+    let name = "Jerry"
+    let age = 18
+    let tel = "1388888888"
+
+    //方法
+    function changeName() {
+      name = "Tom"
     }
-  },
-  methods: {
-    changeName() {
-      this.name = "zhang-san"
-    },
-    changeAge() {
-      this.age += 1
-    },
-    showTel() {
-      alert(this.tel)
-    },
+
+    function changeName() {
+      age += 1
+    }
+
+    function changeName() {
+      alert(tel)
+    }
+
+    return { name, age }
   },
 }
 </script>
