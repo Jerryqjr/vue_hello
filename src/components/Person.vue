@@ -23,15 +23,19 @@ export default {
       name = "Tom"
     }
 
-    function changeName() {
+    function changeAge() {
       age += 1
     }
 
-    function changeName() {
+    function showTel() {
       alert(tel)
     }
 
-    return { name, age }
+    //将方法、数据交出去,模版中才能使用
+    return { name, age, changeName, changeAge, showTel }
+
+    //return值也可以是一个函数
+    //return () => "哈哈"
   },
 }
 </script>
