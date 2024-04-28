@@ -2,41 +2,39 @@
   <div class="person">
     <h2>姓名：{{ name }}</h2>
     <h2>年龄：{{ age }}</h2>
-    <button @click="changeName">修改名字</button>
-    <button @click="changeAge">年龄+1</button>
+    <h2>地址:{{ address }}</h2>
+    <button @click="changName">修改名字</button>
+    <button @click="changAge">年龄+1</button>
     <button @click="showTel">点我查看联系方式</button>
   </div>
 </template>
 
-<script lang="ts">
+<!-- <script lang="ts">
 export default {
   name: "Person",
-  setup(props, ctx) {
-    //console.log("@@", this) //setup函数中的this是undefined,vue3中已经弱化this了
-    //数据,原来是写在data()中的,此时的name,age,tel不是响应式的数据
-    let name = "Jerry"
-    let age = 18
-    let tel = "1388888888"
+}
+</script> -->
 
-    //方法
-    function changeName() {
-      name = "Tom"
-    }
+<!-- 下面的写法是setup语法糖 -->
+<script lang="ts" setup name="Person">
+console.log(this) //undefined
 
-    function changeAge() {
-      age += 1
-    }
+// 数据（注意：此时的name、age、tel都不是响应式数据）
+let name = "Jerry"
+let age = 18
+let tel = "13888888888"
+let address = "西湖区留下街道"
 
-    function showTel() {
-      alert(tel)
-    }
-
-    //将方法、数据交出去,模版中才能使用
-    return { name, age, changeName, changeAge, showTel }
-
-    //return值也可以是一个函数
-    //return () => "哈哈"
-  },
+// 方法
+function changName() {
+  name = "Tom" //注意：此时这么修改name页面是不变化的
+}
+function changAge() {
+  console.log(age)
+  age += 1 //注意：此时这么修改age页面是不变化的
+}
+function showTel() {
+  alert(tel)
 }
 </script>
 
