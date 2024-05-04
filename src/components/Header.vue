@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <h2 class="title">Vue路由测试</h2>
 </template>
