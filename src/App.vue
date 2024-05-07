@@ -1,22 +1,13 @@
 <template>
   <div class="app">
-    <Header></Header>
-    <!-- 导航区 -->
-    <div class="navigate">
-      <router-link to="/home" active-class="active">首页</router-link>
-      <RouterLink :to="{ name: 'news' }" active-class="active">新闻</RouterLink>
-      <RouterLink :to="{ path: '/about' }" active-class="active">关于</RouterLink>
-    </div>
-    <!--展示区  -->
-    <div class="main-content">
-      <RouterView></RouterView>
-    </div>
+    <Count></Count>
+    <LoveTalk></LoveTalk>
   </div>
 </template>
 
 <script setup lang="ts" name="App">
-import { RouterView, RouterLink } from 'vue-router'
-import Header from "./components/Header.vue"
+import Count from './components/Count.vue';
+import LoveTalk from './components/JokeTalk.vue';
 </script>
 
 
