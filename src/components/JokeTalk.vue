@@ -11,6 +11,12 @@ import { useTalkStore } from '@/store/jokeTalk'
 
 const talkStore = useTalkStore()
 
+//$subscribe有点像watch
+talkStore.$subscribe((mutate, state) => {
+    //浏览器的本地存储
+    localStorage.setItem('talkList', JSON.stringify(state.talkList))
+})
+
 //方法
 function getLoveTalk() {
     talkStore.getATalk()

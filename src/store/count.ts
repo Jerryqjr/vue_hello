@@ -17,4 +17,11 @@ export const useCountStore = defineStore("count", {
       address: "杭州",
     }
   },
+  //对数据的进一步计算
+  getters: {
+    bigSum: (state) => state.sum * 10,
+    upperName(): string {
+      return this.name.toUpperCase()
+    },
+  },
 })

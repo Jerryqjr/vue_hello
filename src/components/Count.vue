@@ -1,8 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div class="count">
-        <h2>当前求和为{{ sum }}</h2>
-        <h3>我是{{ name }},在{{ address }}读书</h3>
+        <h2>当前求和为{{ sum }},放大十倍后:{{ bigSum }}</h2>
+        <h3>我是{{ name }},在{{ address }}读书,大写:{{ upperName }}</h3>
         <select v-model.number="n">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -19,7 +19,7 @@ import { useCountStore } from '@/store/count'
 import { storeToRefs } from 'pinia';
 //使用useCountStore,得到一专门保存count相关的store
 const countStore = useCountStore()
-const { sum, name, address } = storeToRefs(countStore)
+const { sum, name, address, bigSum, upperName } = storeToRefs(countStore)
 
 //以下两种数据都可以拿到数据
 // console.log(countStore.sum)
