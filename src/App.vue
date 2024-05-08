@@ -1,13 +1,11 @@
 <template>
   <div class="app">
-    <Count></Count>
-    <LoveTalk></LoveTalk>
+    <Father></Father>
   </div>
 </template>
 
 <script setup lang="ts" name="App">
-import Count from './components/Count.vue';
-import LoveTalk from './components/JokeTalk.vue';
+import Father from './components/Father.vue';
 </script>
 
 
